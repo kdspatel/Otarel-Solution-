@@ -128,8 +128,10 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
             </span>
-            Available for new projects
-            <span className="hidden text-muted/70 sm:inline">·</span>
+            <span className="bg-linear-to-r from-[#1f66f2] via-[#7a5af8] to-[#e056c8] bg-clip-text font-display font-extrabold text-transparent">
+              Build. Automate. Scale.
+            </span>
+            <span className="text-muted/60">·</span>
             <span className="hidden sm:inline">Technology partner – South Africa</span>
           </motion.div>
 
@@ -157,7 +159,7 @@ export default function Hero() {
                 <path d="M7.5 4.5 13 10l-5.5 5.5" />
               </svg>
             </Link>
-            <a
+            {/* <a
               href={waLink('Hi Otarel Solutions, I would like to discuss a project.')}
               target="_blank"
               rel="noopener noreferrer"
@@ -165,7 +167,7 @@ export default function Hero() {
             >
               <IconWhatsApp className="h-5 w-5 text-brand" />
               Chat on WhatsApp
-            </a>
+            </a> */}
           </motion.div>
 
           <motion.ul
