@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Reveal from './Reveal.jsx'
-import { IconWhatsApp } from '../data.jsx'
-import { SITE, waLink } from '../config.js'
+import { IconArrow } from '../data.jsx'
+import { SITE, hasPhone, hasWhatsApp, mailLink, telLink, waLink } from '../config.js'
 
 const needs = [
   'Website or web app',
@@ -59,12 +59,11 @@ export default function Contact({ page = false }) {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    const text =
-      `Hi Otarel Solutions, my name is ${form.name} (${form.email}).\n` +
-      `I'm interested in: ${form.need}.\n` +
-      (form.budget ? `Budget: ${form.budget}.\n` : '') +
+    const body =
+      `Name: ${form.name}\nEmail: ${form.email}\nInterested in: ${form.need}\n` +
+      (form.budget ? `Budget: ${form.budget}\n` : '') +
       `\n${form.message}`
-    window.open(waLink(text), '_blank', 'noopener,noreferrer')
+    window.location.href = mailLink(`Website enquiry from ${form.name}`, body)
     setSent(true)
   }
 
@@ -80,7 +79,7 @@ export default function Contact({ page = false }) {
         <div className="absolute -right-24 bottom-0 h-[380px] w-[380px] rounded-full bg-violet/20 blur-[120px]" />
       </div>
 
-      <div className="relative mx-auto grid max-w-[1328px] gap-14 px-6 lg:px-8 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-[1480px] gap-14 px-6 lg:px-8 lg:grid-cols-2">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Contact</p>
           <h2 className="mt-4 font-display text-4xl font-bold leading-[1.06] tracking-tight text-ink md:text-6xl">
@@ -91,19 +90,32 @@ export default function Contact({ page = false }) {
             us on WhatsApp.
           </p>
           <a
-            href={waLink('Hi Otarel Solutions, I would like to discuss a project.')}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={mailLink('Project enquiry', 'Hi Otarel Solutions,\n\n')}
             className="mt-8 inline-flex h-14 items-center gap-3 rounded-2xl bg-linear-to-r from-brand to-violet px-8 font-semibold text-white shadow-[0_18px_40px_-14px_rgba(70,90,245,0.85)] transition-transform hover:scale-[1.04]"
           >
-            <IconWhatsApp className="h-5 w-5" />
-            Chat on WhatsApp
+            Email us
+            <IconArrow className="h-5 w-5" />
           </a>
 
           <div className="mt-10 flex flex-col gap-3 text-muted">
             <a href={`mailto:${SITE.email}`} className="w-fit transition-colors hover:text-brand">
               {SITE.email}
             </a>
+            {hasPhone && (
+              <a href={telLink()} className="w-fit transition-colors hover:text-brand">
+                {SITE.phone}
+              </a>
+            )}
+            {hasWhatsApp && (
+              <a
+                href={waLink('Hi Otarel Solutions, I would like to discuss a project.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit transition-colors hover:text-brand"
+              >
+                WhatsApp us
+              </a>
+            )}
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
               <span className="inline-flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
@@ -129,11 +141,13 @@ export default function Contact({ page = false }) {
                   className="py-10 text-center"
                 >
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand/10 text-brand">
-                    <IconWhatsApp className="h-8 w-8" />
+                    <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M5 12.5l4.5 4.5L19 7.5" />
+                    </svg>
                   </div>
                   <h3 className="mt-6 font-display text-2xl font-semibold text-ink">Almost there!</h3>
                   <p className="mx-auto mt-3 max-w-xs text-muted">
-                    WhatsApp should have opened with your message ready. Just press send and we'll reply
+                    Your email app should have opened with your message ready. Just press send and we'll reply
                     shortly.
                   </p>
                   <button
@@ -209,8 +223,7 @@ export default function Contact({ page = false }) {
                     type="submit"
                     className="inline-flex h-14 items-center justify-center gap-3 rounded-2xl bg-linear-to-r from-brand to-violet font-semibold text-white shadow-[0_18px_40px_-14px_rgba(90,100,255,0.8)] transition-transform hover:scale-[1.02]"
                   >
-                    <IconWhatsApp className="h-5 w-5" />
-                    Send enquiry via WhatsApp ↗
+                    Send enquiry ↗
                   </button>
                 </motion.form>
               )}

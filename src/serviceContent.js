@@ -61,4 +61,16 @@ export const serviceContent = {
     ],
     bestFor: 'Businesses with many repeat questions or enquiries to sort.',
   },
+    hosting: {
+    headline: 'Hosting and domains, looked after so your website stays online.',
+    intro:
+      'We register and manage your domain, set up reliable hosting for your website or system, and take care of the technical settings, so you do not have to deal with the technical side.',
+    points: [
+      'Domain registration and renewals, including .co.za',
+      'Hosting for your website or business system',
+      'Business email addresses on your own domain',
+      'Secure connection (SSL) set up for your site',
+    ],
+    bestFor: 'Businesses that want one team to look after their website, domain and email.',
+  },
 }

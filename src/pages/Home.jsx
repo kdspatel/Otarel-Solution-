@@ -5,6 +5,7 @@ import Services from '../components/Services.jsx'
 import Process from '../components/Process.jsx'
 import Work from '../components/Work.jsx'
 import Contact from '../components/Contact.jsx'
+import { SITE } from '../config.js'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <About />
       <Services />
       <Process />
-      <Work />
+      {SITE.showWork && <Work />}
       <Contact />
     </>
   )

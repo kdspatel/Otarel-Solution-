@@ -8,7 +8,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Everything your business needs to work smarter online"
-        text="Five focused services, one team that understands how they fit together."
+        text="Six focused services, one team that understands how they fit together."
         crumbs={[{ label: 'Services' }]}
       />
       <Services hideHeading />

@@ -74,12 +74,12 @@ function DashboardMock() {
 export default function Services({ hideHeading = false }) {
   return (
     <section id="services" className={`relative bg-surface ${hideHeading ? 'pb-28 pt-16' : 'py-28'}`}>
-      <div className="mx-auto max-w-[1328px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1480px] px-6 lg:px-8">
         {!hideHeading && (
           <SectionHeading
             eyebrow="Services"
             title="Everything your business needs to work smarter online"
-            text="Five focused services, one team that understands how they fit together."
+            text="Six focused services, one team that understands how they fit together."
           />
         )}
 
@@ -125,21 +125,20 @@ export default function Services({ hideHeading = false }) {
           ))}
 
           <Reveal delay={0.4} className="md:col-span-6">
-            <div className="relative overflow-hidden rounded-3xl bg-navy p-8 md:p-10">
-              <div className="pointer-events-none absolute -left-16 -top-24 h-64 w-64 rounded-full bg-brand/40 blur-[90px]" />
-              <div className="pointer-events-none absolute -bottom-24 -right-10 h-64 w-64 rounded-full bg-violet/40 blur-[90px]" />
+            <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#eaf1ff] via-white to-[#efeaff] p-8 shadow-[0_30px_80px_-40px_rgba(31,102,242,0.45)] ring-1 ring-line md:p-12">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-sky/30 blur-[90px]" />
               <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
                 <div>
-                  <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">
+                  <h3 className="font-display text-2xl font-semibold text-ink md:text-3xl">
                     Not sure where to start?
                   </h3>
-                  <p className="mt-2 text-white/70">
+                  <p className="mt-2 text-muted">
                     Tell us about your business and we'll suggest the right solution, with no obligation.
                   </p>
                 </div>
                 <Link
                   to="/contact"
-                  className="inline-flex h-13 shrink-0 items-center rounded-2xl bg-white px-7 py-3.5 font-semibold text-navy transition-transform hover:scale-[1.04]"
+                  className="inline-flex h-13 shrink-0 items-center rounded-2xl bg-linear-to-r from-brand to-violet px-7 py-3.5 font-semibold text-white shadow-[0_18px_40px_-14px_rgba(70,90,245,0.85)] transition-transform hover:scale-[1.04]"
                 >
                   Talk to us ↗
                 </Link>

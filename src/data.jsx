@@ -59,6 +59,13 @@ export const IconArrowUpRight = (p) => (
     <path d="M7 17L17 7M8 7h9v9" />
   </Svg>
 )
+export const IconServer = (p) => (
+  <Svg {...p}>
+    <rect x="3" y="4" width="18" height="6" rx="2" />
+    <rect x="3" y="14" width="18" height="6" rx="2" />
+    <path d="M7 7h.01M7 17h.01M12 7h5M12 17h5" />
+  </Svg>
+)
 export const IconMenu = (p) => (
   <Svg {...p}>
     <path d="M4 7h16M4 12h16M4 17h16" />
@@ -74,7 +81,6 @@ export const navLinks = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'How we work', href: '/how-we-work' },
-  { label: 'Work', href: '/#work' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -139,7 +145,7 @@ export const services = [
     title: 'Websites & Web Applications',
     text: 'Fast, responsive sites and web apps that present your business properly and turn visitors into enquiries.',
     icon: IconWeb,
-    span: 'md:col-span-3',
+    span: 'md:col-span-2',
     visual: 'browser',
     tags: ['React', 'Responsive design', 'Web apps'],
   },
@@ -149,7 +155,7 @@ export const services = [
     title: 'Custom Software & Business Systems',
     text: 'Management systems built around how your team actually works, not the other way round.',
     icon: IconCode,
-    span: 'md:col-span-3',
+    span: 'md:col-span-2',
     visual: 'dashboard',
     tags: ['Node.js', 'PostgreSQL', 'Dashboards'],
   },
@@ -179,6 +185,15 @@ export const services = [
     icon: IconSpark,
     span: 'md:col-span-2',
     tags: ['AI agents', 'Lead qualification', 'Routing'],
+  },
+  {
+    num: '06',
+    slug: 'hosting',
+    title: 'Hosting & Domains',
+    text: 'Domain registration, reliable hosting and business email, all managed for you so your site stays online.',
+    icon: IconServer,
+    span: 'md:col-span-2',
+    tags: ['Domains', 'Hosting', 'Business email'],
   },
 ]
 
