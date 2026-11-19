@@ -172,7 +172,7 @@ export const services = [
     num: '04',
     slug: 'crm',
     title: 'CRM & Lead Generation',
-    text: 'Capture, track and follow up every lead in one place so fewer opportunities slip away.',
+    text: 'Capture, track and follow up on every lead in one place, helping you stay organised and turn more enquiries into opportunities.',
     icon: IconUsers,
     span: 'md:col-span-2',
     tags: ['Lead capture', 'Follow-ups', 'Integrations'],
